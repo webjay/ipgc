@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Interesting People Getting Coffee</title>
+  <meta name="description" content="Match interesting friends up for coffee">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ipgcoffee">
+  <meta name="twitter:title" content="Interesting People Getting Coffee">
+  <meta name="twitter:description" content="Match interesting friends up for coffee">
+</head>
+<body>
+
+  <header class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Interesting People Getting Coffee</h1>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="m-b-3">
+      <h2 class="lead">Networking is Key</h2>
+      Let's help our friends by connecting them to interesting people.
+      Simply select those you think would be a good match.
+      We might throw in a surprise if they tag their picture with <code>#ipgc</code>.
+    </div>
+
+    <form id="searchform"></form>
+    <form id="friendlyform"></form>
+
+    <div id="friendlist" hidden>
+      <fieldset>
+        <legend class="lead">
+          Friends
+          <small class="text-muted">let interesting friends have coffee</small>
+        </legend>
+      </fieldset>
+      <fieldset class="form-group">
+        <input type="search" name="query" value="" class="form-control" id="search" placeholder="jacob, joakim" form="searchform">
+      </fieldset>
+      <fieldset>
+        <progress class="progress progress-success" value="0" max="1"></progress>
+        <div id="friendset" class="card-columns"></div>
+      </fieldset>
+      <div class="m-y-2">
+        <button type="button" class="btn btn-outline-success btn-lg" onclick="match(event);">Match</button>
+      </div>
+    </div>
+
+    <div id="tweet" class="text-xs-center"></div>
+
+    <aside>
+      <div class="m-x-auto" id="auth" style="width: 300px;">
+        <div class="card card-block text-xs-center">
+          <h4 class="card-title">Authorize</h4>
+          <p class="card-text small">Please allow this page to get a list of your Twitter friends.</p>
+          <button type="button" class="btn btn-outline-success" onclick="login();">Authorize</button>
+        </div>
+      </div>
+    </aside>
+
+    <footer class="m-t-3">
+      <hr>
+      <p class="text-muted small">
+      Inspired by <a href="http://comediansincarsgettingcoffee.com/" class="text-muted">comediansincarsgettingcoffee.com</a>.
+      Made in Copenhagen by <a href="https://twitter.com/webjay" class="text-muted">me</a>.
+      <a href="javascript:logout();" class="close" aria-label="Deauthorize app" title="Deauthorize app"><span aria-hidden="true">&times;</span></a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.auth0.com/js/lock/10.1.0/lock.min.js"></script>
+  <script src="app.js" async></script>
+  <script src="https://platform.twitter.com/widgets.js" async></script>
+
+</body>
+</html>
