@@ -1,0 +1,12 @@
+{
+  "name": "oauth-proxy",
+  "version": "1.0.0",
+  "description": "Open Authorization Proxy",
+  "scripts": {
+    "start": "node --max-old-space-size=450 --gc_global --gc_interval=100 server.js"
+  },
+  "author": "Jacob Friis Saxberg",
+  "dependencies": {
+    "request": "2.74.0"
+  }
+}
